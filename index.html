@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Adam Asmaca Oyunu</title>
+    <style>
+      /* CSS kodları buraya eklenebilir */
+    </style>
+  </head>
+  <body>
+    <h1>Adam Asmaca Oyunu</h1>
+    <div id="word"></div>
+    <div id="guesses"></div>
+
+    <script>
+      var words = ["javascript", "html", "css"];
+      var word = words[Math.floor(Math.random() * words.length)];
+      var answerArray = [];
+      for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "*";
+      }
+      var remainingLetters = word.length;
+
+      while (remainingLetters > 0) {
+        // kelimeyi göster
+        document.getElementById("word").innerHTML = answerArray.join(" ");
+
+        // kullanıcının tahminini alın
+        var guess = prompt("Harf tahmininizi girin:");
+        if (guess === null) {
+          break;
+        } else if (guess.length !== 1) {
+          alert("Lütfen bir harf girin.");
+        } else {
+          // harfin doğruluğunu kontrol edin
+          var correctGuess = false;
+          for (var j = 0; j < word.length; j++) {
+            if (word[j] === guess.toLowerCase()) {
+              answerArray[j] = guess.toLowerCase();
+              remainingLetters--;
+              correctGuess = true;
+            }
+          }
+          if (!correctGuess) {
+            // yanlış tahmin
+            var wrongGuesses = document.getElementById("guesses").innerHTML;
+            document.getElementById("guesses").innerHTML = wrongGuesses + guess.toLowerCase() + " ";
+          }
+        }
+      }
+
+      // oyun sonu mesajı
+      if (remainingLetters === 0) {
+        alert("Tebrikler! Doğru kelimeyi tahmin ettiniz.");
+      } else {
+        alert("Maalesef, kelimeyi tahmin edemediniz. Doğru kelime: " + word);
+      }
+    </script>
+  </body>
+</html>
