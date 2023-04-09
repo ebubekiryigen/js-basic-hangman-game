@@ -1,0 +1,100 @@
+#word {
+    font-size: 2em;
+    margin: 1em 0;
+}
+
+#guesses {
+    font-size: 1.5em;
+    margin: 1em 0;
+}
+
+#hangman {
+    width: 400px;
+    height: 400px;
+    margin: 1em auto;
+    position: relative;
+}
+
+  /* gövde */
+#hangman .body {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px 100px 50px 50px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#hangman .arm {
+    width: 20px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    bottom: 120px;
+}
+#hangman .left-arm {
+    left: -50px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+
+#hangman .right-arm {
+    right: -50px;
+    transform: rotate(45deg);
+    transform-origin: top right;
+}
+#hangman .leg {
+    width: 20px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    bottom: 20px;
+}
+#hangman .left-leg {
+    left: -40px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+#hangman .right-leg {
+    right: -40px;
+    transform: rotate(45deg);
+    transform-origin: top right;
+}
+#hangman .head {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hangman .eye {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 30px;
+}
+
+#hangman .left-eye {
+    left: 30px;
+}
+
+#hangman .right-eye {
+    right: 30px;
+}
+#hangman .mouth {
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    border: 5px solid #000;
+    border-top: none;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);}
